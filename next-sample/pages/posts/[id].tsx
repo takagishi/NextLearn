@@ -10,6 +10,7 @@ const Post: NextPage<PostProps> = (props) => {
   const { id } = props;
   const router = useRouter();
   if (router.isFallback) return <div>Loading...</div>;
+
   return (
     <div>
       <Head>
