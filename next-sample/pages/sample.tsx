@@ -1,4 +1,2 @@
-const Sample = () => {
-  return <span>サンプルページです</span>;
-};
+const Sample = () => <span>サンプルページです</span>;
 export default Sample;

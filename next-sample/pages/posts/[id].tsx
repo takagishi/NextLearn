@@ -6,6 +6,9 @@ type PostProps = {
   id: string;
 };
 
+const obj = {};
+console.log(obj);
+
 const Post: NextPage<PostProps> = (props) => {
   const { id } = props;
   const router = useRouter();
@@ -15,7 +18,7 @@ const Post: NextPage<PostProps> = (props) => {
     <div>
       <Head>
         <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <p>このページは静的サイト生成によってビルド時に生成されたページです</p>
