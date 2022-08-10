@@ -1,13 +1,10 @@
-import { NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 type PostProps = {
-  id: string;
+  id: string | undefined;
 };
-
-const obj = {};
-console.log(obj);
 
 const Post: NextPage<PostProps> = (props) => {
   const { id } = props;
@@ -28,3 +25,33 @@ const Post: NextPage<PostProps> = (props) => {
   );
 };
 export default Post;
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = [
+    {
+      params: {
+        id: '1',
+      },
+    },
+    {
+      params: {
+        id: '2',
+      },
+    },
+    {
+      params: {
+        id: '3',
+      },
+    },
+  ];
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps<PostProps> = async (context) => {
+  const id = Array.isArray(context.params?.id) ? context.params?.id[0] : context.params?.id;
+  return {
+    props: {
+      id,
+    },
+  };
+};

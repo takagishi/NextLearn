@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 
 type SSGProps = {
   message: string;
@@ -18,6 +19,10 @@ const SSG: NextPage<SSGProps> = (props) => {
       <main>
         <p>このページは静的サイト生成によってビルド時に生成されたページです</p>
         <p>{message}</p>
+        {/* /ssrへ遷移するためのリンク作成 */}
+        <Link href="/ssr">
+          <a>Go to SSR</a>
+        </Link>
       </main>
     </div>
   );
@@ -28,7 +33,6 @@ const SSG: NextPage<SSGProps> = (props) => {
 export const getStaticProps: GetStaticProps<SSGProps> = async (context) => {
   const timestamp = new Date().toLocaleDateString();
   const message = `${timestamp} にgetStaticPropsが実行されました`;
-  console.log(message);
   return {
     props: {
       message,
