@@ -4,22 +4,22 @@
         "es2021": true
     },
     "extends": [
-        "next",
+        "eslint:recommended",
         "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "next",
         "airbnb",
         "airbnb-typescript",
+        "airbnb/hooks",
         "prettier"
     ],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
-    "plugins": [
-        "react-hooks",
-        "@typescript-eslint"
-    ],
     "rules": {
         //https://ja.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html#eslint
         "react/jsx-uses-react": "off",
@@ -36,6 +36,7 @@
             "specialLink": [ "hrefLeft", "hrefRight" ],
             "aspects": [ "invalidHref", "preferButton" ]
         }],
+        "react/jsx-curly-brace-presence": "error",
         "curly":["error"]
     }
 }
