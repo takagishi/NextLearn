@@ -1,0 +1,34 @@
+# storybook
+npx sb@latest init
+
+# eslint
+npx install-peerdeps --dev eslint-config-airbnb
+npx install-peerdeps --dev eslint-config-airbnb-typescript
+
+# prettier
+yarn add --dev eslint-config-prettier
+yarn add --dev prettier
+
+#　tsconfig追記
+"jsxImportSource": "@emotion/react", //emotionのtypescriptエラー対応(型が存在しない)
+"baseUrl": "./",
+"paths": {
+  "@/*": ["./src/*"]
+}
+
+# vscodeの設定ファイルsettings.jsonの上書き
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // フォーマッタをprettierに指定
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode" // フォーマッタをprettierに指定
+  },
+  "editor.formatOnSave": true, // ファイル保存時にPrettierでフォーマット
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": [
+    "source.organizeImports",
+    "source.fixAll.eslint"
+  ],
+}
