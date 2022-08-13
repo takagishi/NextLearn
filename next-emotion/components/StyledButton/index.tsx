@@ -21,6 +21,7 @@ const variants = {
 
 type StyledButtonProps = {
   variant: keyof typeof variants;
+  onClick: () => void;
   children: ReactNode;
 };
 const buttonBaseStyle = css({
@@ -34,8 +35,8 @@ const buttonBaseStyle = css({
     outline: "none",
   },
 });
-export const StyledButton = (props: StyledButtonProps) => {
-  const { variant, children } = props;
+const StyledButton = (props: StyledButtonProps) => {
+  const { variant, onClick, children } = props;
   const style = variants[variant];
   const buttonVariantStyle = css({
     color: style.color,
@@ -43,8 +44,14 @@ export const StyledButton = (props: StyledButtonProps) => {
     border: style.border,
   });
   return (
-    <button type="button" css={[buttonBaseStyle, buttonVariantStyle]}>
+    <button
+      type="button"
+      onClick={onClick}
+      css={[buttonBaseStyle, buttonVariantStyle]}
+    >
       {children}
     </button>
   );
 };
+
+export default StyledButton;
