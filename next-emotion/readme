@@ -1,7 +1,34 @@
 # storybook
 npx sb@latest init
 
-# eslint
+# emotion
+yarn add @emotion/react
+yarn add --dev @emotion/babel-plugin
+yarn add --dev @emotion/babel-preset-css-prop
+
+# .babel.rcの追加
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-react": {
+          "runtime": "automatic",
+          "importSource": "@emotion/react"
+        }
+      }
+    ]
+  ],
+  "plugins": ["@emotion/babel-plugin"]
+}
+# .storybook/main.js の編集
+//https://qiita.com/xrxoxcxox/items/fc79d6c833b0900ed736
+babel: async (options) => ({
+  ...options,
+  presets: [...options.presets, "@emotion/babel-preset-css-prop"],
+})
+
+# eslの追加
 npx install-peerdeps --dev eslint-config-airbnb
 npx install-peerdeps --dev eslint-config-airbnb-typescript
 

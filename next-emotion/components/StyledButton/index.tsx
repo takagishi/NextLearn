@@ -37,7 +37,6 @@ const buttonBaseStyle = css({
 export const StyledButton = (props: StyledButtonProps) => {
   const { variant, children } = props;
   const style = variants[variant];
-  console.log(style);
   const buttonVariantStyle = css({
     color: style.color,
     backgroundColor: style.backgroundColor,
