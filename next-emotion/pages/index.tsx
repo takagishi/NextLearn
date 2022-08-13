@@ -1,7 +1,13 @@
+import { css } from '@emotion/react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+
+const stringStyle = css`
+  color: red;
+`
+
 
 const Home: NextPage = () => {
   return (
@@ -21,6 +27,8 @@ const Home: NextPage = () => {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
         </p>
+
+        <p css={stringStyle}>emotion test</p>
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
