@@ -1,5 +1,6 @@
 # storybook
 npx sb@latest init
+#eslint の質問はYESを入力
 
 # emotion
 yarn add @emotion/react
