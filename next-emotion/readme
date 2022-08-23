@@ -30,12 +30,17 @@ babel: async (options) => ({
 })
 
 # eslの追加
+※YARN使っていいかの質問はYES
 npx install-peerdeps --dev eslint-config-airbnb
 npx install-peerdeps --dev eslint-config-airbnb-typescript
+yarn add eslint-plugin-storybook --dev
+# eslintの設定ファイルを上書き
+# .eslintignoreを他からコピー
 
 # prettier
 yarn add --dev eslint-config-prettier
 yarn add --dev prettier
+# prettier設定ファイルの上書き
 
 #　tsconfig追記
 "jsxImportSource": "@emotion/react", //emotionのtypescriptエラー対応(型が存在しない)

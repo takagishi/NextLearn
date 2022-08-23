@@ -9,6 +9,7 @@
         "plugin:react-hooks/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:consistent-default-export-name/fixed",
         "next",
         "airbnb",
         "airbnb-typescript",
@@ -45,5 +46,13 @@
             ],
             "peerDependencies": true
         }]
-    }
+    },
+    "overrides": [{
+        "files": [
+        "src/pages/**/*"
+        ],
+        "rules": {
+            "consistent-default-export-name/default-export-match-filename": "off",
+        },
+    }],
 }
