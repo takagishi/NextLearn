@@ -2,15 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [Getting Started](#getting-started)
 - [開発環境のセットアップ](#開発環境のセットアップ)
-	- [storybook](#storybook)
-	- [emotion](#emotion)
-		- [.babel.rcの追加](#babelrcの追加)
-		- [.storybook/main.js の編集](#storybookmainjs-の編集)
-	- [TESTモジュール追加](#testモジュール追加)
-	- [eslintの追加](#eslintの追加)
-	- [prettier](#prettier)
-	- [tsconfig追記](#tsconfig追記)
-	- [vscodeの設定ファイルsettings.jsonの上書き](#vscodeの設定ファイルsettingsjsonの上書き)
+  - [storybook](#storybook)
+  - [emotion](#emotion)
+    - [.babel.rcの追加](#babelrcの追加)
+    - [.storybook/main.js の編集](#storybookmainjs-の編集)
+  - [TESTモジュール追加](#testモジュール追加)
+  - [eslintの追加](#eslintの追加)
+  - [prettier](#prettier)
+  - [tsconfig追記](#tsconfig追記)
+  - [vscodeの設定ファイルsettings.jsonの上書き](#vscodeの設定ファイルsettingsjsonの上書き)
 - [Learn More](#learn-more)
 
 ## Getting Started
@@ -84,7 +84,7 @@ babel: async (options) => ({
 - jest-environment-jsdom  
   ファイルごとにテスト環境を変えることが可能
 ```
-yarn add --dev jest ts-jest @testing-library/react @testing-library/jest-dom  jest-environment-jsdom
+yarn add --dev jest ts-jest @types/jest @testing-library/react @testing-library/jest-dom  jest-environment-jsdom
 ```
 
 ### eslintの追加
@@ -106,8 +106,9 @@ prettier設定ファイルの上書き
 
 
 ### tsconfig追記
-"jsxImportSource": "@emotion/react", //emotionのtypescriptエラー対応(型が存在しない)  
 ```
+"jsxImportSource": "@emotion/react",  //emotionのtypescriptエラー対応(型が存在しない)  
+"types": ["@emotion/react/types/css-prop"],
 "baseUrl": "./",
 "paths": {
   "@/*": ["./src/*"]
