@@ -1,10 +1,11 @@
 import { render, RenderResult, screen } from '@testing-library/react';
-import { Input } from './index';
+import { Input } from '.';
 
 describe('Input', () => {
   let renderResult: RenderResult;
 
   beforeEach(() => {
+    // renderResult = render(<Input id='username' label='Username' />);
     renderResult = render(<Input id='username' label='Username' />);
   });
 
