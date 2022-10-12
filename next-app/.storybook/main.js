@@ -9,6 +9,10 @@ module.exports = {
     "@storybook/addon-interactions"
   ],
   "framework": "@storybook/react",
+  babel: async (options) => ({
+  ...options,
+  presets: [...options.presets, "@emotion/babel-preset-css-prop"],
+  }),
   "core": {
     "builder": "@storybook/builder-webpack5"
   }

@@ -2,17 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [Getting Started](#getting-started)
 - [開発環境のセットアップ](#開発環境のセットアップ)
-	- [create-next-app](#create-next-app)
-	- [yarn](#yarn)
-	- [storybook](#storybook)
-	- [emotion](#emotion)
-		- [.babel.rcの追加](#babelrcの追加)
-		- [.storybook/main.js の編集](#storybookmainjs-の編集)
-	- [TESTモジュール追加](#testモジュール追加)
-	- [eslintの追加](#eslintの追加)
-	- [prettier](#prettier)
-	- [tsconfig追記](#tsconfig追記)
-	- [vscodeの設定ファイルsettings.jsonの上書き](#vscodeの設定ファイルsettingsjsonの上書き)
+  - [create-next-app](#create-next-app)
+  - [yarn](#yarn)
+  - [storybook](#storybook)
+  - [emotion](#emotion)
+    - [.babelrcの追加](#babelrcの追加)
+    - [.storybook/main.js の編集](#storybookmainjs-の編集)
+  - [TESTモジュール追加](#testモジュール追加)
+  - [eslintの追加](#eslintの追加)
+  - [prettier](#prettier)
+  - [tsconfig追記](#tsconfig追記)
+  - [vscodeの設定ファイルsettings.jsonの上書き](#vscodeの設定ファイルsettingsjsonの上書き)
 - [Learn More](#learn-more)
 
 ## Getting Started
@@ -54,7 +54,7 @@ yarn add --dev @emotion/babel-plugin
 yarn add --dev @emotion/babel-preset-css-prop
 ```
 
-#### .babel.rcの追加
+#### .babelrcの追加
 ```
 {
   "presets": [
@@ -72,7 +72,8 @@ yarn add --dev @emotion/babel-preset-css-prop
 }
 ```
 #### .storybook/main.js の編集
-https://qiita.com/xrxoxcxox/items/fc79d6c833b0900ed736
+.storybook/main.jsへの追記
+cf. https://qiita.com/xrxoxcxox/items/fc79d6c833b0900ed736
 ```
 babel: async (options) => ({
   ...options,
@@ -108,7 +109,7 @@ npx install-peerdeps --dev eslint-config-airbnb
 npx install-peerdeps --dev eslint-config-airbnb-typescript
 yarn add eslint-plugin-storybook --dev
 ```
-eslintの設定ファイルを上書き  
+eslintの設定ファイル(.eslintrc.json)を上書き  
 .eslintignoreを他からコピー
 
 ### prettier
@@ -129,6 +130,7 @@ prettier設定ファイルの上書き
 }
 ```
 ### vscodeの設定ファイルsettings.jsonの上書き
+```
 {
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode" // フォーマッタをprettierに指定
@@ -144,6 +146,7 @@ prettier設定ファイルの上書き
     "source.fixAll.eslint"
   ],
 }
+```
 
 ## Learn More
 
