@@ -6,15 +6,16 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
+        //nextと被っている
+        //"plugin:react-hooks/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:consistent-default-export-name/fixed",
-        "plugin:jest-dom/recommended",
         "next",
         "airbnb",
         "airbnb-typescript",
-        "airbnb/hooks",
+        //nextと被っている
+        //"airbnb/hooks",
         "prettier"
     ],
     "parserOptions": {
@@ -53,7 +54,17 @@
         "src/pages/**/*"
         ],
         "rules": {
-            "consistent-default-export-name/default-export-match-filename": "off",
-        },
-    }],
+            "consistent-default-export-name/default-export-match-filename": "off"
+        }
+    },{
+        "files":[
+            "**/__tests__/**/*.+(ts|tsx|js)",
+            "**/?(*.)+(spec|test).+(ts|tsx|js)"
+        ],
+        "extends":[
+            "plugin:jest/recommended",
+            "plugin:jest-dom/recommended",
+            "plugin:testing-library/react"
+        ]
+    }]
 }

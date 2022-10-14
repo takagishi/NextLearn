@@ -10,6 +10,7 @@
   "editor.formatOnType": true,
   "editor.codeActionsOnSave": [
     "source.organizeImports",
-    "source.fixAll.eslint"
+    "source.fixAll.eslint",
+    "source.addMissingImports"
   ],
 }

@@ -108,6 +108,14 @@ yarn add --dev jest ts-jest @types/jest @testing-library/react @testing-library/
 npx install-peerdeps --dev eslint-config-airbnb
 npx install-peerdeps --dev eslint-config-airbnb-typescript
 yarn add eslint-plugin-storybook --dev
+
+#default export check
+yarn add --dev eslint-plugin-consistent-default-export-name
+#testing系のeslint
+yarn add --dev eslint-plugin-jest
+yarn add --dev eslint-plugin-jest-dom
+yarn add --dev eslint-plugin-testing-library
+
 ```
 eslintの設定ファイル(.eslintrc.json)を上書き  
 .eslintignoreを他からコピー
