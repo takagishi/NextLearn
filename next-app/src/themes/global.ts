@@ -1,7 +1,7 @@
-import { pink, red } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+const global = createTheme({
   palette: {
     primary: {
       main: '#556cd6',
@@ -9,13 +9,10 @@ const theme = createTheme({
     secondary: {
       main: '#19857b',
     },
-    background: {
-      default: pink[300],
-    },
     error: {
       main: red.A400,
     },
   },
 });
 
-export default theme;
+export default global;

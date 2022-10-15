@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import * as NextImage from 'next/image';
-import theme from "../src/themes/theme";
+import global from "../src/themes/global";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,7 +16,7 @@ export const parameters = {
 export const decorators = [
     (Story) => {
       return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={global}>
           <CssBaseline />
           <Story />
         </ThemeProvider>

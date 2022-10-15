@@ -13,6 +13,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
   - [prettier](#prettier)
   - [tsconfig追記](#tsconfig追記)
   - [vscodeの設定ファイルsettings.jsonの上書き](#vscodeの設定ファイルsettingsjsonの上書き)
+  - [libraryの追加](#libraryの追加)
 - [Learn More](#learn-more)
 
 ## Getting Started
@@ -156,6 +157,14 @@ prettier設定ファイルの上書き
 }
 ```
 
+### libraryの追加
+```
+yarn add @mui/material @emotion/react @emotion/styled
+yarn add @mui/icons-material
+
+yarn add react-hook-form
+yarn add swr
+```
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

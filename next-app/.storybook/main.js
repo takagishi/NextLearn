@@ -5,6 +5,8 @@ module.exports = {
   "typescript" : { reactDocgen: false },
   "staticDirs": ['public'],
   "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
@@ -21,13 +23,13 @@ module.exports = {
   "core": {
     "builder": "@storybook/builder-webpack5"
   },
-  //https://zenn.dev/enish/articles/cde07d3d22f95b
-  // webpackFinal: async (config) => {
-  //   config.resolve.plugins = [
-  //     new TsconfigPathsPlugin({
-  //       configFile: path.resolve(__dirname, '../tsconfig.json')
-  //     }),
-  //   ];
-  //   return config;
-  // }
+  // https://zenn.dev/enish/articles/cde07d3d22f95b
+  webpackFinal: async (config) => {
+    config.resolve.plugins = [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, '../tsconfig.json')
+      }),
+    ];
+    return config;
+  }
 }
