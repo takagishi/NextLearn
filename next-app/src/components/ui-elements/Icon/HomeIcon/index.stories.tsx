@@ -1,4 +1,4 @@
-import { SvgIconProps } from '@mui/material';
+import { SvgIconProps, SxProps } from '@mui/material';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import HomeIcon from '.';
 
@@ -58,13 +58,16 @@ export default {
 } as ComponentMeta<typeof HomeIcon>;
 
 const Template: ComponentStory<typeof HomeIcon> = (props: SvgIconProps) => {
-  if (props.sx === '') {
-    props.sx = null;
-  } else if (props.sx) {
-    props.sx = JSON.parse(props.sx);
+  const { sx, ...rest } = props;
+  if (sx) {
+    try {
+      const sxObj: SxProps = JSON.parse(String(sx)) as SxProps;
+      return <HomeIcon sx={sxObj} {...rest} />;
+    } catch (e) {
+      return <HomeIcon {...rest} />;
+    }
   }
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <HomeIcon {...props} />;
+  return <HomeIcon {...rest} />;
 };
 
 export const Home = Template.bind({});
